@@ -93,5 +93,11 @@
 
 <p>이중 우선순위 큐에 -45, 45, 333이 남아있으므로, [333, -45]를 반환합니다.</p>
 
+<h3>How to Solve</h3><hr>
+1. LinkedList에 Comparator를 Override 하여 사용하면 될 줄 알고 시도하였지만 LinkedList에는 왜인지 Comparator를 사용할 수 가 없었다.<br>
+2. 최소 값으로 정렬되는 PriorityQueue, 최대 값으로 정렬되는 PriorityQueue를 사용하려고 하였으나 Queue에 넣을 때마다 정렬된다는 것을 망각하고 size만큼 queue.add(queue.poll())을 실행하여 정답에 찾지 못하였다.<br>
+3. 같은 정렬 방법으로 정렬하는 PriorityQueue를 2개를 선언하여 하나는 수를 담는 Queue로 하나는 temp Queue로 잠시 담아두는 용도로 사용하여 해결하였다.<br><br>
+
+<br>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges

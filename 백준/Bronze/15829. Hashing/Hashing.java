@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 
 public class Main {
     
@@ -10,10 +11,10 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         String str = br.readLine();
 
-        long sum = 0;
+        BigDecimal sum = new BigDecimal(0);
 
         for(int i=0; i<n; i++) {
-            sum += (str.charAt(i) - 'a' + 1) * Math.pow(31, i);
+            sum = sum.add(new BigDecimal((str.charAt(i) - 'a' + 1) * Math.pow(31, i)));
         }
 
         System.out.println(sum);

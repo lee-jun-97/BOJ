@@ -22,7 +22,6 @@ class Solution {
     public int solution(int m, int n, String[] board) {
 
         List<List<Character>> list = new ArrayList<>();
-        visited = new boolean[m][n];
         
         for(int i=0; i<board[0].length(); i++) {
             list.add(new ArrayList<>());

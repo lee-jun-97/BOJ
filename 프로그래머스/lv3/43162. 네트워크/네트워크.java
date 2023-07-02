@@ -6,21 +6,21 @@ class Solution {
         
         Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[n];
-        
-        queue.add(0); 
-        
-        while(!queue.isEmpty()) {
-            int temp = queue.poll();
-            visited[temp] = true;
+
+        // 굳이 0을 돌리고 다시 탐색할 필요 없이 방문배열 이용하여 한번에 해결하도록 수정.
+        // queue.add(0); 
+        // while(!queue.isEmpty()) {
+        //     int temp = queue.poll();
+        //     visited[temp] = true;
             
-            for(int i=0; i<n; i++) {
-                if(!visited[i] && computers[temp][i] == 1 && temp != i) {
-                    queue.add(i);
-                }
-            }
-        }
+        //     for(int i=0; i<n; i++) {
+        //         if(!visited[i] && computers[temp][i] == 1 && temp != i) {
+        //             queue.add(i);
+        //         }
+        //     }
+        // }
         
-        answer++;
+        // answer++;
         
         for(int i=0; i<n; i++) {
             if(!visited[i]) {
@@ -40,8 +40,6 @@ class Solution {
                 answer++;
             }
         }
-        
-        
         return answer;
     }
 }

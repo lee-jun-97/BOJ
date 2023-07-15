@@ -16,6 +16,20 @@ class Solution {
     
     public int solution(String begin, String target, String[] words) {
         int answer = 0;
+
+        // 제출 후 시간 단축 수정 
+        // [ Start ]
+        boolean check = false;
+        for(String s : words) {
+            if(s.equals(target)) {
+                check = true;
+            }
+        }
+        
+        if(!check) {
+            return 0;
+        }
+        // [ End ]
         
         boolean[] visited = new boolean[words.length];
         Queue<Node> q = new LinkedList<>();
@@ -43,6 +57,8 @@ class Solution {
                     if(!node.visited[j] && words[j].matches(s)) {
                         node.visited[j] = true;
                         q.add(new Node(words[j], node.count + 1, node.visited));
+                        // BFS 진행 시 이전에 체크한 단어는 체크할 필요가 없어서 다시 되돌아 갈 필요가 없는 걸까 ?
+                        // node.visited[j] = false;
                     }
                 }
                 

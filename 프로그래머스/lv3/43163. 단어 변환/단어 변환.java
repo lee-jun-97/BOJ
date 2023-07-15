@@ -17,7 +17,7 @@ class Solution {
     public int solution(String begin, String target, String[] words) {
         int answer = 0;
 
-        // 제출 후 시간 단축 수정 
+        // 제출 후 시간 단축 수정 ( 23. 07. 15 )
         // [ Start ]
         boolean check = false;
         for(String s : words) {
